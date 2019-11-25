@@ -1,0 +1,29 @@
+<a routerLink="/">Home</a>
+<div class="text-center">
+  <h2>Add Awesome</h2>
+</div>
+<div *ngIf="messageSuccess" class="alert alert-success">
+  <p>{{messageSuccess}}</p>
+</div>
+
+<div *ngIf="messageError" class="alert alert-danger">
+  <p>{{messageError}}</p>
+</div>
+
+<form #awesomeForm="ngForm" (ngSubmit)="add(awesomeForm.value)">
+  <label class="col">
+    Tag:
+    <input type="text" name="tag" ngModel class="form-control">
+  </label>
+  <label class="col">
+    Url:
+    <input type="text" name="url" ngModel class="form-control">
+  </label>
+  <label class="col">
+    Descriptions:
+    <input type="text" name="descriptions" ngModel class="form-control">
+  </label>
+  <div class="col">
+    <button class="btn btn-info" type="submit">Add</button>
+  </div>
+</form>

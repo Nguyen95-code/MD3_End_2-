@@ -1,0 +1,20 @@
+<h1>My Awesome List</h1>
+<a routerLink="/create-awesome">Create</a>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">Tag</th>
+    <th scope="col">Url</th>
+    <th scope="col">Descriptions</th>
+  </tr>
+  </thead>
+  <tbody *ngFor="let aws of awesomeList">
+  <tr>
+    <td> {{ aws.tag }}</td>
+    <td> {{ aws.url }}</td>
+    <td> {{ aws.descriptions }}</td>
+    <td><a [routerLink]="['edit-awesome',aws.id]">Edit</a></td>
+    <td><a [routerLink]="['delete-awesome',aws.id]">Delete</a></td>
+  </tr>
+  </tbody>
+</table>
